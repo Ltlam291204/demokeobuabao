@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TRO CHOI BUA KEO BAO</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>TRO CHOI BUA KEO BAO</h1>
+    <form action="/play" method="POST">
+        <label for="rock">Keo</label>
+        <input type="radio" id="rock" name="choice" value="0">
+        <label for="paper">Bua</label>
+        <input type="radio" id="paper" name="choice" value="1">
+        <label for="scissors">Bao</label>
+        <input type="radio" id="scissors" name="choice" value="2"><br><br>
+        <input type="submit" value="Choi">
+    </form>
+    <div id="result">
+        {% if winner %}
+            <h2>Ket qua:</h2>
+            <p>Nguoi choi chon: {{ user_choice }}</p>
+            <p>May tinh chon: {{ comp_choice }}</p>
+            <h3>{{ winner }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
